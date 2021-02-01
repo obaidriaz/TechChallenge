@@ -8,12 +8,12 @@ Some important information:
 - The Base URL to be used for testing the API is https://wooliesxtechchallengeapi.azurewebsites.net/api/answers
 - All 3 exercises have been completed.
 
-Challenge 1:
+# Challenge 1:
 GET: https://wooliesxtechchallengeapi.azurewebsites.net/api/answers/user
 
-Challenge 2:
+# Challenge 2:
 GET: https://wooliesxtechchallengeapi.azurewebsites.net/api/answers/sort?sortOption=ascending
 
-Challenge 3:
+# Challenge 3:
 POST: https://wooliesxtechchallengeapi.azurewebsites.net/api/answers/trolleyTotal
 
