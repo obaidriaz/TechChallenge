@@ -7,7 +7,7 @@ Some important information:
 - Unit Tests have been written using MSTest Framework.
 - The Base URL to be used for testing the API is https://wooliesxtechchallengeapi.azurewebsites.net/api/answers
 - All 3 exercises have been completed.
-- I have tested the exercises using the provided WooliesX client and all 3 exercises produce correct results.
+- I have verified the exercises using the provided WooliesX client as well and all of them produce correct results.
 
 ## Challenge 1:
 GET: https://wooliesxtechchallengeapi.azurewebsites.net/api/answers/user
