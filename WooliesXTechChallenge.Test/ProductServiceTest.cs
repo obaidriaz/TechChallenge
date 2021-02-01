@@ -10,55 +10,6 @@ namespace WooliesXTechChallenge.Test
     [TestClass]
     public class ProductServiceTest
     {
-        #region Test Data Methods
-
-        /// <summary>
-        /// This method provides the test data for TestSortProducts method of this class
-        /// </summary>        
-        public static IEnumerable<object[]> GetSortProductsData()
-        {
-            //Low to high
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "Low", TestDataProvider.GetSortedProductsLowToHigh() };
-
-            //High to low
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "High", TestDataProvider.GetSortedProductsHighToLow() };
-
-            //Ascending
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "Ascending", TestDataProvider.GetSortedProductsAscending() };
-
-            //Descending
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "Descending", TestDataProvider.GetSortedProductsDescending() };
-
-            //Invalid sort Option that will return the products as it is.
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "Descending6767", TestDataProvider.GetFakeProducts() };
-
-            //Empty sort Option that will return the products as it is.
-            yield return new object[] { TestDataProvider.GetFakeProducts(), "", TestDataProvider.GetFakeProducts() };
-        }
-
-        /// <summary>
-        /// This method provides the test data for TestSortProducts_Recommended method of this class
-        /// </summary>
-        public static IEnumerable<object[]> GetSortProductsRecommendedData()
-        {
-            //Sorting based on popularity when all products are in shopping history
-            yield return new object[] { TestDataProvider.GetFakeProducts(), TestDataProvider.GetFakeShopperHistory(), TestDataProvider.GetSortedProductsByPopularity() };
-
-            //Sorting based on popularity when all products are NOT in shopping history
-            yield return new object[] { TestDataProvider.GetFakeProducts(), TestDataProvider.GetFakeShopperHistory2(), TestDataProvider.GetSortedProductsByPopularity2() };
-        }
-
-        /// <summary>
-        /// This method provides the test data for TestGetTrolleyTotal method of this class
-        /// </summary>
-        public static IEnumerable<object[]> GetTrolleyTotalData()
-        {
-            yield return new object[] { TestDataProvider.GetFakeTrolleyData1(), 22.5M };
-            yield return new object[] { TestDataProvider.GetFakeTrolleyData2(), 21M };
-        }
-
-        #endregion
-
         /// <summary>
         /// This method will test the SortProducts method and will run multiple times against data provided by GetSortProductsData method. 
         /// The data will be provided dynamically which will contain sorting options Low, High, Ascending, Descending, Invalid value and Empty value
@@ -118,5 +69,54 @@ namespace WooliesXTechChallenge.Test
         //    //Assert
         //    Assert.AreEqual(trolleyTotal, expectedResult);
         //}
+
+        #region Test Data Methods
+
+        /// <summary>
+        /// This method provides the test data for TestSortProducts method of this class
+        /// </summary>        
+        public static IEnumerable<object[]> GetSortProductsData()
+        {
+            //Low to high
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "Low", TestDataProvider.GetSortedProductsLowToHigh() };
+
+            //High to low
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "High", TestDataProvider.GetSortedProductsHighToLow() };
+
+            //Ascending
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "Ascending", TestDataProvider.GetSortedProductsAscending() };
+
+            //Descending
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "Descending", TestDataProvider.GetSortedProductsDescending() };
+
+            //Invalid sort Option that will return the products as it is.
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "Descending6767", TestDataProvider.GetFakeProducts() };
+
+            //Empty sort Option that will return the products as it is.
+            yield return new object[] { TestDataProvider.GetFakeProducts(), "", TestDataProvider.GetFakeProducts() };
+        }
+
+        /// <summary>
+        /// This method provides the test data for TestSortProducts_Recommended method of this class
+        /// </summary>
+        public static IEnumerable<object[]> GetSortProductsRecommendedData()
+        {
+            //Sorting based on popularity when all products are in shopping history
+            yield return new object[] { TestDataProvider.GetFakeProducts(), TestDataProvider.GetFakeShopperHistory(), TestDataProvider.GetSortedProductsByPopularity() };
+
+            //Sorting based on popularity when all products are NOT in shopping history
+            yield return new object[] { TestDataProvider.GetFakeProducts(), TestDataProvider.GetFakeShopperHistory2(), TestDataProvider.GetSortedProductsByPopularity2() };
+        }
+
+        /// <summary>
+        /// This method provides the test data for TestGetTrolleyTotal method of this class
+        /// </summary>
+        public static IEnumerable<object[]> GetTrolleyTotalData()
+        {
+            yield return new object[] { TestDataProvider.GetFakeTrolleyData1(), 22.5M };
+            yield return new object[] { TestDataProvider.GetFakeTrolleyData2(), 21M };
+        }
+
+        #endregion
     }
 }

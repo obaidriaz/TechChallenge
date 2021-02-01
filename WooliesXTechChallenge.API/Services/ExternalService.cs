@@ -16,6 +16,7 @@ namespace WooliesXTechChallenge.API.Services
         private const string productsApiUrl = "api/resource/products";
         private const string shopperHistoryApiUrl = "api/resource/shopperHistory";
         private const string trolleyCalculatorApiUrl = "api/resource/trolleyCalculator";
+        private const string baseURLConfigKey = "AppSettings:WooliesXAPIBaseUrl";
 
         public ExternalService(HttpClient httpClient, IConfiguration configuration)
         {
@@ -65,7 +66,7 @@ namespace WooliesXTechChallenge.API.Services
 
         private string GetUri(string path)
         {
-            return QueryHelpers.AddQueryString($"{_configuration.GetValue<string>("AppSettings:WooliesXAPIBaseUrl")}{path}", "token", Constants.Token);
+            return QueryHelpers.AddQueryString($"{_configuration.GetValue<string>(baseURLConfigKey)}{path}", "token", Constants.Token);
         }
     }
 }
